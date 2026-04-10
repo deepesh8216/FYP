@@ -1,0 +1,88 @@
+{
+  "source_files": {
+    "week4": "outputs/week4/comparison_table.csv",
+    "week5": "outputs/week5/comparison_table.csv",
+    "week6": "outputs/week6/comparison_table.csv"
+  },
+  "n_per_seed_rows": 15,
+  "by_variant_mean": [
+    {
+      "week": 4,
+      "variant": "late_fusion",
+      "mean_f1_macro": 0.6820138414654983,
+      "mean_accuracy": 0.6855345911949685,
+      "n_seeds": 3
+    },
+    {
+      "week": 4,
+      "variant": "unimodal_image",
+      "mean_f1_macro": 0.6289506556318079,
+      "mean_accuracy": 0.6331236897274634,
+      "n_seeds": 3
+    },
+    {
+      "week": 4,
+      "variant": "unimodal_text",
+      "mean_f1_macro": 0.7072689192330422,
+      "mean_accuracy": 0.710691823899371,
+      "n_seeds": 3
+    },
+    {
+      "week": 5,
+      "variant": "attention_fusion",
+      "mean_f1_macro": 0.7079140700942698,
+      "mean_accuracy": 0.710691823899371,
+      "n_seeds": 3
+    },
+    {
+      "week": 6,
+      "variant": "contrastive_then_attention",
+      "mean_f1_macro": 0.682367343443627,
+      "mean_accuracy": 0.6855345911949685,
+      "n_seeds": 3
+    }
+  ],
+  "ranking_by_mean_f1_macro": [
+    {
+      "rank": 1,
+      "week": 5,
+      "variant": "attention_fusion",
+      "mean_f1_macro": 0.707914,
+      "mean_accuracy": 0.710692
+    },
+    {
+      "rank": 2,
+      "week": 4,
+      "variant": "unimodal_text",
+      "mean_f1_macro": 0.707269,
+      "mean_accuracy": 0.710692
+    },
+    {
+      "rank": 3,
+      "week": 6,
+      "variant": "contrastive_then_attention",
+      "mean_f1_macro": 0.682367,
+      "mean_accuracy": 0.685535
+    },
+    {
+      "rank": 4,
+      "week": 4,
+      "variant": "late_fusion",
+      "mean_f1_macro": 0.682014,
+      "mean_accuracy": 0.685535
+    },
+    {
+      "rank": 5,
+      "week": 4,
+      "variant": "unimodal_image",
+      "mean_f1_macro": 0.628951,
+      "mean_accuracy": 0.633124
+    }
+  ],
+  "ablation_notes": [
+    "unimodal_text / unimodal_image: modality removed from multimodal setting (Week 4 baselines).",
+    "late_fusion: logits-level fusion without attention (Week 4).",
+    "attention_fusion: cross-attention fusion without contrastive pretrain (Week 5).",
+    "contrastive_then_attention: Week 6 pipeline (contrastive pretrain, then Week 5-style fine-tune)."
+  ]
+}

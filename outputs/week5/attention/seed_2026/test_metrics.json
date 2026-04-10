@@ -1,0 +1,19 @@
+{
+  "accuracy": 0.7169811320754716,
+  "f1_macro": 0.713306887847097,
+  "precision_macro": 0.7247023809523809,
+  "recall_macro": 0.7150997150997151,
+  "confusion_matrix": [
+    [
+      48,
+      30
+    ],
+    [
+      15,
+      66
+    ]
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n        Fake       0.76      0.62      0.68        78\n        Real       0.69      0.81      0.75        81\n\n    accuracy                           0.72       159\n   macro avg       0.72      0.72      0.71       159\nweighted avg       0.72      0.72      0.71       159\n",
+  "best_val_f1_macro": 0.7331081081081081,
+  "best_epoch": 8
+}

@@ -25,11 +25,10 @@ ENV/
 .env
 *.env
 
-# --- Data & experiment outputs (large) ---
+# --- Data (large: images + CSVs — use FakeNewsNet + your preprocess pipeline) ---
 data/
-outputs/
 
-# --- Model checkpoints / large binaries ---
+# --- Model checkpoints / large binaries (GitHub file limit 100 MB; use Releases or Drive) ---
 *.pt
 *.pth
 *.bin
@@ -38,3 +37,5 @@ outputs/
 
 # --- Logs ---
 *.log
+
+# outputs/ is NOT ignored: commit small metrics (json/csv/png). Checkpoints excluded via *.pt above.

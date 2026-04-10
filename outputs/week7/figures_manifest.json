@@ -1,0 +1,11 @@
+{
+  "n_plots": 15,
+  "out_dir": "outputs/week7/figures",
+  "globs": [
+    "outputs/week4/text/seed_*/test_metrics.json",
+    "outputs/week4/image/seed_*/test_metrics.json",
+    "outputs/week4/fusion/seed_*/test_metrics.json",
+    "outputs/week5/attention/seed_*/test_metrics.json",
+    "outputs/week6/finetune_attention/seed_*/test_metrics.json"
+  ]
+}
