@@ -1,0 +1,40 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- Virtual environments ---
+venv/
+.venv/
+env/
+ENV/
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
+# --- IDE / OS ---
+.idea/
+.vscode/
+.DS_Store
+
+# --- Secrets / local env ---
+.env
+*.env
+
+# --- Data & experiment outputs (large) ---
+data/
+outputs/
+
+# --- Model checkpoints / large binaries ---
+*.pt
+*.pth
+*.bin
+*.ckpt
+*.onnx
+
+# --- Logs ---
+*.log
