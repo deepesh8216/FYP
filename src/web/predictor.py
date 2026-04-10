@@ -49,6 +49,8 @@ class MultimodalPredictor:
         img_size: int = 224,
     ):
         self.device = device or ("cuda" if torch.cuda.is_available() else "cpu")
+        # Default: Week 5 attention fusion (strongest mean F1 in ablation). Week 6:
+        # outputs/week6/finetune_attention/seed_1337/best_model.pt via FAKE_NEWS_CHECKPOINT.
         path = checkpoint_path or os.environ.get(
             "FAKE_NEWS_CHECKPOINT",
             "outputs/week5/attention/seed_1337/best_model.pt",

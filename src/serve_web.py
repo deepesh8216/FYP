@@ -4,6 +4,8 @@ Week 8: start the API from project root.
   python3 src/serve_web.py
 
 Optional env: FAKE_NEWS_CHECKPOINT=path/to/best_model.pt
+  (Week 5: outputs/week5/attention/seed_*/best_model.pt
+   Week 6: outputs/week6/finetune_attention/seed_*/best_model.pt)
 """
 
 import os

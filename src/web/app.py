@@ -5,7 +5,9 @@ Run from project root:
   uvicorn src.web.app:app --host 0.0.0.0 --port 8000
 
 Env:
-  FAKE_NEWS_CHECKPOINT  path to best_model.pt (default: week5 seed_1337)
+  FAKE_NEWS_CHECKPOINT  path to best_model.pt (default: week5 seed_1337).
+  Week 6 weights: outputs/week6/finetune_attention/seed_*/best_model.pt
+  Week 7 does not produce a checkpoint (evaluation only).
 """
 
 import os

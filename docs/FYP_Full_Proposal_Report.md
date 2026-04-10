@@ -1,8 +1,6 @@
 # Final Year Project — Full Technical Report  
 ## Multimodal Fake News Detection (FakeNewsNet)
 
-**Student:** [Your Name]  
-**Program / Institution:** [Fill in]  
 **Academic Year:** 2025–2026  
 
 This document combines **proposal-style framing** (objectives, scope, methodology) with a **week-by-week account** of work as implemented in this repository, including dataset construction, model variants, evaluation, ablation, and deployment.
@@ -111,9 +109,11 @@ Misinformation often spreads with **text and images**. Unimodal detectors may mi
 ---
 
 ### Week 6 — Contrastive Pretrain + Fine-Tune  
+**Orchestration:** `src/run_week6_experiments.py` (per seed: pretrain → `train_attention_fusion.py --init_contrastive ...` → evaluate).
+
 **Pipeline:**  
 1. `pretrain_contrastive.py` → `outputs/week6/contrastive/seed_*/contrastive_pretrained.pt` (+ history JSON).  
-2. Fine-tune attention classifier on labeled fake/real task → `outputs/week6/finetune_attention/seed_*/best_model.pt` (training script as used in your experiment workflow).  
+2. `train_attention_fusion.py` with `--init_contrastive` → **`outputs/week6/finetune_attention/seed_*/best_model.pt`** (same filename as Week 5; different folder).  
 3. `summarize_week6.py` → `outputs/week6/comparison_table.csv`.  
 
 **Key idea:** Improve **shared text–image representation** before supervised classification; **compare** against Week 5 trained **end-to-end** without contrastive stage.
@@ -121,6 +121,8 @@ Misinformation often spreads with **text and images**. Unimodal detectors may mi
 ---
 
 ### Week 7 — Cross-Experiment Analysis & Figures  
+**No training:** Week 7 does **not** produce `best_model.pt`; it only aggregates Week 4–6 metrics and exports figures.
+
 **Orchestration:** `src/run_week7_complete.py`  
 
 1. `summarize_week7.py` reads Week 4–6 comparison CSVs and writes:  
@@ -198,7 +200,7 @@ Misinformation often spreads with **text and images**. Unimodal detectors may mi
 | Core multimodal model | `src/models/model.py` |
 | Week 4 runner | `src/run_week4_experiments.py` |
 | Week 5 runner | `src/run_week5_experiments.py` |
-| Week 6 contrastive | `src/pretrain_contrastive.py`, `src/models/contrastive.py` |
+| Week 6 runner | `src/run_week6_experiments.py`, `src/pretrain_contrastive.py`, `src/models/contrastive.py` |
 | Week 7 aggregation | `src/summarize_week7.py`, `src/week7_export_figures.py` |
 | Web app | `src/web/app.py`, `src/web/predictor.py`, `src/web/static/index.html` |
 | Entrypoint | `src/serve_web.py` |

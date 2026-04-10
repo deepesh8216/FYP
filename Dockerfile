@@ -1,9 +1,11 @@
 # Week 8: container for the web API. Mount your checkpoint at runtime.
 # Build:  docker build -t fyp-fakenews .
-# Run:    docker run --rm -p 8000:8000 \
-#           -v "$(pwd)/outputs/week5/attention/seed_1337/best_model.pt:/model.pt:ro" \
-#           -e FAKE_NEWS_CHECKPOINT=/model.pt \
-#           fyp-fakenews
+# Run (Week 5 checkpoint example):
+#   docker run --rm -p 8000:8000 \
+#     -v "$(pwd)/outputs/week5/attention/seed_1337/best_model.pt:/model.pt:ro" \
+#     -e FAKE_NEWS_CHECKPOINT=/model.pt \
+#     fyp-fakenews
+# Week 6: mount .../outputs/week6/finetune_attention/seed_1337/best_model.pt instead.
 
 FROM python:3.11-slim
 
